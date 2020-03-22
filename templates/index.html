@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>রেজিস্ট্রেশন ফর্ম </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+        @import url('https://fonts.maateen.me/siyam-rupali/font.css');
+
+        body, button, input, select, textarea {
+            font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, SiyamRupali, sans-serif;
+        }
+
+
+
+    .w3-btn {margin-bottom:10px;}
+
+        .py-center {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .feature {
+            min-height: 10000px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<section class="hero is-info">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="columns">
+                        <div class="column is-one-fifth">
+                            <img src="https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg"
+                                 style="height: 70px"
+                                 alt="">
+
+                        </div>
+                        <div class="column">
+                            <h1 class="title">
+                                Locally App
+                            </h1>
+                            <h2 class="subtitle">
+                                <span>লোকালি এপে আপনাকে স্বাগতম</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column" style="text-align: center">
+                        <a class="button is-success is-large" href="#registration">রেজিস্ট্রেশন করুন</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<a name="registration"></a>
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column py-center" style="min-height: 220px;">
+                <i style="font-size: 500%" class="fas has-text-success fa-comment-alt"></i>
+                <i style="font-size: 500%" class="fas has-text-info fa-map-marker-alt"></i>
+                <i style="font-size: 500%" class="fas has-text-primary fa-microphone"></i>
+            </div>
+            <div class="column">
+                {% if error %}
+                    <div class="notification is-danger">
+                        অনুগ্রহ করে ফর্মটি সঠিক ভাবে পূরণ করুন।
+                    </div>
+                {% endif %}
+                {% if ticket %}
+                    <div class="notification is-success">
+                        আপনার রেজিস্ট্রেশন সফল হয়েছে।
+                    </div>
+                    {% include 'card.html' %}
+                    <br>
+                    <div class="column" style="text-align: center">
+                        <a class="button is-success is-large" href={% url "sign in page" %}>লগ ইন করুন</a>
+                </div>
+                {% endif %}
+                {% if not ticket %}
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="field">
+                            <label class="label"> নাম</label>
+                            <div class="control">
+                                <input name="name" class="input {% if error.name %}is-danger{% endif %}" type="text"
+                                       placeholder="আপনার পূর্ণ নাম" value="{{ request.POST.name }}">
+                            </div>
+                            {% if error.name %}<p class="help is-danger">{{ error.name }}</p>{% endif %}
+                        </div>
+
+                        <div class="field">
+                            <label class="label">ইমেইল </label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input {% if error.email %}is-danger{% endif %}" name="email" type="email"
+                                       placeholder="ইমেইল ঠিকানা" value="{{ request.POST.email }}">
+                                <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                                <span class="icon is-small is-right"><i class="fas fa-exclamation-triangle"></i></span>
+                            </div>
+                            {% if error.email %}<p class="help is-danger">{{ error.email }}</p>{% endif %}
+                        </div>
+
+                        <div class="field">
+                            <label class="label">মোবাইল নম্বর</label>
+                            <div class="control has-icons-left has-icons-right">
+
+                                <input type="text" name="phone" class="input {% if error.phone %}is-danger{% endif %}"
+                                       placeholder="মোবাইল ফোন নম্বর" value="{{ request.POST.phone }}">
+                                <span class="icon is-small is-left"><i class="fas fa-phone"></i></span>
+                            </div>
+                            {% if error.phone %}<p class="help is-danger">{{ error.phone }}</p>{% endif %}
+                        </div>
+
+                        <div class="field">
+                            <label class="label">পাসওয়ার্ড </label>
+                            <div class="control has-icons-left has-icons-right">
+
+                                <input type="password" name="password"
+                                       class="input {% if error.phone %}is-danger{% endif %}" placeholder="পাসওয়ার্ড"
+                                       value="{{ request.POST.password }}">
+                                <span class="icon is-small is-left"><i class="fas fa-key"></i></span>
+                            </div>
+                            {% if error.phone %}<p class="help is-danger">{{ error.password }}</p>{% endif %}
+                        </div>
+
+                        <div class="field">
+                            <label class="label">আবার পাসওয়ার্ড </label>
+                            <div class="control has-icons-left has-icons-right">
+
+                                <input type="password" name="again_password"
+                                       class="input {% if error.phone %}is-danger{% endif %}"
+                                       placeholder="আবার পাসওয়ার্ড" value="{{ request.POST.password }}">
+                                <span class="icon is-small is-left"><i class="fas fa-key"></i></span>
+                            </div>
+                            {% if error.phone %}<p class="help is-danger">{{ error.again_password }}</p>{% endif %}
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="agreed">
+                                    আমি সকল নিয়ম কানুন ও শর্তাবলী মেনে নিচ্ছি।
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-link"> ঠিক আছে</button>
+                            </div>
+                            <div class="control">
+                                <button class="button is-danger"> বাতিল</button>
+                            </div>
+                        </div>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            ধন্যবাদ
+        </p>
+    </div>
+</footer>
+</body>
+</html>
