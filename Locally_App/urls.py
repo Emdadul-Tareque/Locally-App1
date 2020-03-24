@@ -17,12 +17,16 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 
-from main_app.views import index, sign_in, home, food
+from main_app.views import index, sign_in, home, food_list, main_home, parlor, tutor, user
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^registration/', index, name="registration page"),
-    url(r'^log_in', sign_in, name="log in"),
+    url(r'^log_in/', sign_in, name="log in"),
+    url(r'^user/', user, name='user'),
     url(r'^$', home, name="home"),
-    url(r'^food/', food, name="food"),
+    url(r'^home/', main_home, name="main_home"),
+    url(r'^food/', food_list, name="food"),
+    url(r'^parlor', parlor, name='parlor'),
+    url(r'^tutor', tutor, name='tutor'),
 ]

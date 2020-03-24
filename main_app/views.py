@@ -1,7 +1,7 @@
 from django.http import HttpRequest
 from django.shortcuts import render
 
-from main_app.models import registration
+from main_app.models import registration, Foods, Parlor, Tutor
 
 
 def index(request: HttpRequest):
@@ -45,7 +45,6 @@ def index(request: HttpRequest):
 
 def sign_in(request):
     error = {}
-    users = []
     if request.method == 'POST':
         phone = request.POST.get('phone')
         password = request.POST.get('password')
@@ -60,14 +59,47 @@ def sign_in(request):
                 error = {'password': password}
 
             else:
-                users = {'phone': phone, }
+
+                return render(request, 'Food.html')
 
     return render(request, 'sign_in.html', context={'error': error})
+
+
+def user(request):
+    return render(request, 'Profile.html')
+
 
 
 def home(request):
     return render(request, 'home.html')
 
 
-def food(request):
-    return render(request, 'food.html')
+def main_home(request):
+    return render(request, 'main_home.html')
+
+
+def food_list(request):
+    foods = Foods.objects.all()
+
+    context = {
+        'foods': foods
+    }
+    return render(request, 'food.html', context=context)
+
+
+def parlor(request):
+    parlor = Parlor.objects.all()
+
+    context = {
+        'parlor': parlor
+    }
+    return render(request, 'parlor.html', context=context)
+
+
+def tutor(request):
+    tutor = Tutor.objects.all()
+
+    context = {
+        'tutor': tutor
+    }
+    return render(request, 'Tutor.html', context=context)

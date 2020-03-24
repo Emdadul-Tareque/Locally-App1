@@ -1,0 +1,381 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Locally</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:300,400,700,800|Open+Sans:300,400,700"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body class="bg-light">
+
+<body data-spy="scroll" data-target="#ftco-navbar-spy" data-offset="0">
+
+<div class="site-wrap">
+
+    <nav class="site-menu" id="ftco-navbar-spy">
+        <div class="site-menu-inner" id="ftco-navbar">
+            <ul class="list-unstyled">
+                <li><a href={% url 'home' %}>Home</a></li>
+                <li><a href="{% url 'registration page' %}">Registration</a></li>
+                <li><a href="{% url 'log in' %}">login</a></li>
+                <li><a href="#section-about">About Us</a></li>
+                <li><a href="#section-contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="site-header">
+        <div class="row align-items-center">
+            <div class="col-5 col-md-3">
+
+            </div>
+            <div class="col-2 col-md-6 text-center site-logo-wrap">
+                <a href="{% url 'home' %}" class="site-logo">L</a>
+            </div>
+            <div class="col-5 col-md-3 text-right menu-burger-wrap">
+                <a href="#" class="site-nav-toggle js-site-nav-toggle"><i></i></a>
+
+            </div>
+        </div>
+
+    </header> <!-- site-header -->
+
+    <div class="main-wrap " id="section-home">
+
+        <div class="cover_1 overlay bg-light">
+            <div class="img_bg" style="background-image: url({% static "images/slider-1.jpg" %});" data-stellar-background-ratio="0.5">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center text-center">
+                        <div class="col-md-10" data-aos="fade-up">
+                            <h2 class="heading mb-5">Welcome to locally</h2>
+                            <p><a href="#section-services" class="smoothscroll btn btn-outline-white px-5 py-3">Our
+                                Services</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .cover_1 -->
+
+        <div class="section" data-aos="fade-up" id="section-services">
+            <div class="container" >
+                <div class="row section-heading justify-content-center mb-5">
+                    <div class="col-md-8 text-center" >
+                        <h2 class="heading mb-3">Find your service</h2>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="ftco-46">
+                        <div class="ftco-46-row d-flex flex-column flex-lg-row">
+                            <div class="ftco-46-image"
+                                 style="background-image: url('{% static "images/img_1.jpg" %}');"></div>
+                            <div class="ftco-46-text ftco-46-arrow-left">
+                                <h4 class="ftco-46-subheading">Home Made</h4>
+                                <h3 class="ftco-46-heading">Fresh food</h3>
+                                <p class="mb-5">এখানে আপনি বাড়িতে বানানো সুস্বাদু ও স্বাস্থ্যসম্মত খাবার পাবেন। </p>
+                                <p><a href="{% url 'food_list' %}" class="btn-link">ঘুরে আসুন<span class="ion-android-arrow-forward"></span></a>
+                                </p>
+                            </div>
+                            <div class="ftco-46-image"
+                                 style="background-image: url('{% static "images/img_2.jpg" %}');"></div>
+                        </div>
+
+                        <div class="ftco-46-row d-flex flex-column flex-lg-row">
+                            <div class="ftco-46-text ftco-46-arrow-right">
+                                <h4 class="ftco-46-subheading">Beautiful</h4>
+                                <h3 class="ftco-46-heading">Handicraft</h3>
+                                <p class="mb-5">এখানে আপনি হাতে বানানো সুন্দর সুন্দর জিনিস পাবেন </p>
+                                <p><a href="#" class="btn-link">ঘুরে আসুন <span
+                                        class="ion-android-arrow-forward"></span></a></p>
+                            </div>
+                            <div class="ftco-46-image"
+                                 style="background-image: url('{% static "images/img_3.jpg" %}');"></div>
+                            <div class="ftco-46-text ftco-46-arrow-up">
+                                <h4 class="ftco-46-subheading">Beauty</h4>
+                                <h3 class="ftco-46-heading">Parlour</h3>
+                                <p class="mb-5">এখন আর সাজতে বিউটি পার্লার যেতে হবে না । বিউটি পার্লার চলে আসবে আপনার
+                                    কাছে </p>
+                                <p><a href="#" class="btn-link"> ঘুরে আসুন <span
+                                        class="ion-android-arrow-forward"></span></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section" data-aos="fade-up">
+            <div class="container">
+                <div class="row section-heading justify-content-center mb-5">
+                    <div class="col-md-8 text-center">
+                        <h2 class="heading mb-3">Find your service</h2>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="ftco-46">
+                        <div class="ftco-46-row d-flex flex-column flex-lg-row">
+                            <div class="ftco-46-image"
+                                 style="background-image: url('{% static "images/img_4.jpg" %}');"></div>
+                            <div class="ftco-46-text ftco-46-arrow-left">
+                                <h4 class="ftco-46-subheading">Gorgeous </h4>
+                                <h3 class="ftco-46-heading">Dress</h3>
+                                <p class="mb-5">অসাধারণ সব ড্রেস নিয়ে অপেক্ষা করছে আপনারই জন্য </p>
+                                <p><a href="#" class="btn-link">ঘুরে আসুন<span class="ion-android-arrow-forward"></span></a>
+                                </p>
+                            </div>
+                            <div class="ftco-46-image"
+                                 style="background-image: url('{% static "images/img_6.jpg" %}');"></div>
+                        </div>
+
+                        <div class="ftco-46-row d-flex flex-column flex-lg-row">
+                            <div class="ftco-46-text ftco-46-arrow-right">
+                                <h4 class="ftco-46-subheading">Other</h4>
+                                <h3 class="ftco-46-heading">Services</h3>
+                                <p class="mb-5">এখানে আপনি হাতে বানানো সুন্দর সুন্দর জিনিস পাবেন </p>
+                                <p><a href="#" class="btn-link">ঘুরে আসুন <span
+                                        class="ion-android-arrow-forward"></span></a></p>
+                            </div>
+                            <div class="ftco-46-image"
+                                 style="background-image: url('{% static "images/img_7.jpg" %}');"></div>
+                            <div class="ftco-46-text ftco-46-arrow-up">
+                                <h4 class="ftco-46-subheading">Excellent</h4>
+                                <h3 class="ftco-46-heading">Tutor</h3>
+                                <p class="mb-5">হাতে কলমে শেখার কোন বিকল্প নেই। আর ভালো ভাবে শেখার জন্য দরকার ভালো
+                                    শিক্ষক।ভালো ভালো শিক্ষকদের নিয়েই আমাদের এই সেক্টর </p>
+                                <p><a href="#" class="btn-link"> ঘুরে আসুন <span
+                                        class="ion-android-arrow-forward"></span></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- .section -->
+
+        <div class="section pb-3 bg-white" id="section-about" data-aos="fade-up">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-12 col-lg-8 section-heading">
+                        <h2 class="heading mb-5">Locally App</h2>
+                        <p>লোকালি এপ্লিকেশনটি আমাদের আশেপাশে যারা সার্ভিস নিতে কিংবা দিতে চাচ্ছে তাদের মধ্যে যোগাযোগ
+                            তৈরি করে দেওয়া। বিশেষ করে যারা গৃহিনী আছেন তারা যেন ব্যস্ততার মাঝেও উপার্জন করতে পারেন সেদিক
+                            খেয়াল করে বানানো হয়েছে। </p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .section -->
+
+
+        <div class="section bg-white pt-2 pb-2 text-center" data-aos="fade">
+            <p><img src="{% static 'images/bg_hero.png' %}" alt="Image" class="img-fluid"></p>
+        </div> <!-- .section -->
+
+        <div class="section bg-white" data-aos="fade-up">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-12 section-heading text-center">
+                        <h2 class="heading mb-5">Meet The best service provider of the month</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 pr-md-5 text-center mb-5">
+                        <div class="ftco-38">
+                            <div class="ftco-38-img">
+                                <div class="ftco-38-header">
+                                    <img src="{% static 'images/img_8.jpg' %}" alt="Image">
+                                    <h3 class="ftco-38-heading">সুমাইয়া আক্তার </h3>
+                                    <p class="ftco-38-subheading">সেরা রাঁধুনি </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-md-5 text-center mb-5">
+                        <div class="ftco-38">
+                            <div class="ftco-38-img">
+                                <div class="ftco-38-header">
+                                    <img src="{% static 'images/img_8.jpg' %}" alt="Image">
+                                    <h3 class="ftco-38-heading">জোবায়েদা রহমান </h3>
+                                    <p class="ftco-38-subheading">সেরা শিক্ষিকা </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-4"></div> -->
+                </div>
+            </div>
+        </div> <!-- .section -->
+        <!-- .section -->
+
+
+        <div class="section" data-aos="fade-up" id="section-contact">
+            <div class="container">
+                <div class="row section-heading justify-content-center mb-5">
+                    <div class="col-md-8 text-center">
+                        <h2 class="heading mb-3">Get In Touch</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-10 p-5 form-wrap">
+                        <form action="#">
+                            <div class="row mb-4">
+                                <div class="form-group col-md-4">
+                                    <label for="name" class="label">Name</label>
+                                    <div class="form-field-icon-wrap">
+                                        <span class="icon ion-android-person"></span>
+                                        <input type="text" class="form-control" id="name">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="email" class="label">Email</label>
+                                    <div class="form-field-icon-wrap">
+                                        <span class="icon ion-email"></span>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="phone" class="label">Phone</label>
+                                    <div class="form-field-icon-wrap">
+                                        <span class="icon ion-android-call"></span>
+                                        <input type="text" class="form-control" id="phone">
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label for="message" class="label">Message</label>
+                                    <textarea name="message" id="message" cols="30" rows="10"
+                                              class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-4">
+                                    <input type="submit" class="btn btn-primary btn-outline-primary btn-block"
+                                           value="Send Message">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .section -->
+
+        <div class="map-wrap" id="map" data-aos="fade"></div>
+
+
+        <footer class="ftco-footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <div class="footer-widget">
+                            <h3 class="mb-4">About Locally</h3>
+                            <p>লোকালি এপ্লিকেশনটি আমাদের আশেপাশে যারা সার্ভিস নিতে কিংবা দিতে চাচ্ছে তাদের মধ্যে যোগাযোগ
+                                তৈরি করে দেওয়া। বিশেষ করে যারা গৃহিনী আছেন তারা যেন ব্যস্ততার মাঝেও উপার্জন করতে পারেন
+                                সেদিক খেয়াল করে বানানো হয়েছে।. </p>
+
+                            <p><a href="#" class="btn btn-primary btn-outline-primary">Read More</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <div class="footer-widget">
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="footer-widget">
+                            <h3 class="mb-4">Follow Along</h3>
+                            <ul class="list-unstyled social">
+                                <li><a href="#"><span class="fa fa-tripadvisor"></span></a></li>
+                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-widget">
+                            <h3 class="mb-4">News letter</h3>
+                            <form action="#" class="ftco-footer-newsletter">
+                                <div class="form-group">
+                                    <button class="button"><span class="fa fa-envelope"></span></button>
+                                    <input type="email" class="form-control" placeholder="Enter Email">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row pt-5">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                            All rights reserved | This template is made with <i class="fa fa-heart text-danger"
+                                                                                aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank"></a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- loader -->
+    <div id="loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                    stroke="#ff7a5c"/>
+        </svg>
+    </div>
+
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+
+    <script src="{% static 'js/aos.js' %}"></script>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
